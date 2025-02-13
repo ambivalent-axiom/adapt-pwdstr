@@ -1,0 +1,45 @@
+{
+  "_id": "c-01",
+  "_parentId": "b-01",
+  "_type": "component",
+  "_component": "pwdstr",
+  "_classes": "",
+  "_layout": "full-width",
+  "title": "Password Strength Checker",
+  "displayTitle": "Create a Strong Password",
+  "description": "Create the strongest password now!",
+  "_pwdstr": {
+      "aspects": [
+          {
+              "length": 8,
+              "suggestion": "Use at least 8 characters",
+              "score": 1
+          },
+          {
+              "length": 12,
+              "suggestion": "Use at least 12 characters for better security",
+              "score": 2
+          },
+          {
+              "regex": "[A-Z]",
+              "suggestion": "Add capital letters for increased security",
+              "score": 2
+          },
+          {
+              "regex": "[a-z]",
+              "suggestion": "Add lowercase letters",
+              "score": 1
+          },
+          {
+              "regex": "[0-9]",
+              "suggestion": "Add numbers to make your password stronger",
+              "score": 2
+          },
+          {
+              "regex": "[^A-Za-z0-9]",
+              "suggestion": "Add special characters (!@#$%^&*) for maximum security",
+              "score": 3
+          }
+      ]
+  }
+}

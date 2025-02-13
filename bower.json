@@ -1,0 +1,23 @@
+{
+  "name": "adapt-pwdstr",
+  "repository": "git@github.com:ambivalent-axiom/adapt-pwdstr.git",
+  "version": "1.0.0",
+  "framework": ">=5.39.6",
+  "homepage": "https://github.com/ambivalent-axiom/adapt-pwdstr",
+  "component": "pwdstr",
+  "targetAttribute": "_pwdstr",
+  "displayName": "Adapt Password Strength",
+  "description": "A component to assess and advise on best password practices.",
+  "main": "/js/adapt-pwdstr.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component",
+    "game",
+    "password"
+  ],
+  "license": "MIT",
+  "author": "Ambax@Digify arturs@digify.lv",
+  "pluginDependencies": {
+    "adapt-contrib-core": ">=5.19.1"
+  }
+}

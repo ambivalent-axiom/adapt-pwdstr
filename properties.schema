@@ -1,0 +1,144 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required": false,
+  "globals": {
+    "ariaRegion": {
+        "type": "string",
+        "required": true,
+        "default": "Password strength. Create a strong password.",
+        "inputType": "Text",
+        "validators": [],
+        "translatable": true
+    }
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "Password strength",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "displayTitle": {
+    "type": "string",
+    "required": false,
+    "default": "Password strength",
+    "inputType": "Text",
+    "validators": [],
+    "translatable": true
+    },
+    "description": {
+    "type": "string",
+    "default": "Create the strongest password now!",
+    "title": "Informational text.",
+    "inputType": "Text",
+    "help": "Text for the component description"
+    },
+    "_supportedLayout": {
+    "type": "string",
+    "required": true,
+    "enum": ["full-width", "half-width", "both"],
+    "default": "full-width",
+    "editorOnly": true
+    },
+    "_pwdstr": {
+      "type": "object",
+      "required": false,
+      "title": "Password Strength",
+      "properties": {
+        "aspects": {
+          "type": "array",
+          "required": false,
+          "title": "Aspects",
+          "items": {
+            "type": "object",
+            "required": false,
+            "title": "Aspect",
+            "properties": {
+              "regex": {
+                "type": "string",
+                "required": false,
+                "title": "Regex pattern",
+                "inputType": "Text",
+                "validators": ["required"],
+                "help": "Regex pattern that provided keyword should match in text."
+              },
+              "length": {
+                "type": "integer",
+                "required": false,
+                "title": "String length",
+                "inputType": "Text",
+                "validators": [
+                  "required",
+                  {
+                    "type": "number",
+                    "allowDecimal": false,
+                    "min": 1,
+                    "max": 100
+                  }
+                ],
+              },
+              "suggestion": {
+                "type": "string",
+                "required", false,
+                "title": "Suggestion",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Suggestion hint to provide to student unless keyword has regex match."
+              },
+              "score": {
+                "type": "integer",
+                "required", true,
+                "title": "Score",
+                "inputType": "Text",
+                "validators": [
+                  "required",
+                  {
+                    "type": "number",
+                    "allowDecimal": false
+                  }
+                ],
+                "help": "Score for successfully passing this validation point."
+              }
+            }
+          },
+          "default": {
+            {
+              "length": 8,
+              "suggestion": "Use at least 8 chars.",
+              "score": 1
+            },
+            {
+              "length": 12,
+              "suggestion": "Use at least 12 chars."
+              "score": 1
+            },
+            {
+              "regex": "/[A-Z]/",
+              "suggestion": "Add capital letters."
+              "score": 1
+            },
+            {
+              "regex": "/[a-z]/",
+              "suggestion": "Add small letters."
+              "score": 1
+            },
+            {
+              "regex": "/[0-9]/",
+              "suggestion": "Add numbers.",
+              "score": 1
+            },
+            {
+              "regex": "/[^A-Za-z0-9]/",
+              "suggestion": "Add special chars.",
+              "score": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
