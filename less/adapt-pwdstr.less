@@ -1,6 +1,188 @@
 .pwdstr {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  background: #ffffff;
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  &__show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 100px;
+  }
+
+  &__description {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.1em;
+    line-height: 1.6;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid #f0f2f5;
+    margin-bottom: 1rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__input {
+    &--block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: #f8fafc;
+      border-radius: 12px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    &--field {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      color: #2d3748;
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      width: 100%;
+      max-width: 300px;
+
+      &:focus {
+        outline: none;
+        border-color: #4299e1;
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+      }
+
+      &::placeholder {
+        color: #a0aec0;
+      }
+    }
+  }
+
+  // New styles for password strength indicator
+  &__strength-meter {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    
+    &-bar {
+      height: 8px;
+      background: #edf2f7;
+      border-radius: 4px;
+      overflow: hidden;
+      
+      &-fill {
+        height: 100%;
+        width: 0;
+        transition: width 0.3s ease, background-color 0.3s ease;
+        
+        &.weak { background-color: #f56565; width: 33%; }
+        &.medium { background-color: #ed8936; width: 66%; }
+        &.strong { background-color: #48bb78; width: 100%; }
+      }
+    }
+  }
+
+  // New styles for validation messages
+  &__validation {
+    margin-top: 1rem;
+    
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #718096;
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      
+      &.valid {
+        color: #48bb78;
+      }
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__suggestion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    background-color: #ccf0bf;
+    border-radius: 4px;
+    
+    p {
+      margin: 0;
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+  }
+
+  // Progress bar styles
+  &__progress {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    &-bar {
+      width: 100%;
+      height: 12px;
+      background-color: #edf2f7;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    &-fill {
+      height: 100%;
+      width: 0;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+
+      &.weak {
+        background-color: #f56565;
+      }
+
+      &.medium {
+        background-color: #ecc94b;
+      }
+
+      &.strong {
+        background-color: #48bb78;
+      }
+    }
+
+    &-text {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #4a5568;
+      font-weight: 500;
+    }
+  }
 }

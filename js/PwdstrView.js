@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom';
 class PwdstrView extends ComponentView {
   initialize(...args) {
     super.initialize(...args);
+    this.model.set({
+      onChallangeComplete: (score) => this.model.onChallangeComplete(score),
+      _maxScore: this.model._maxScore
+    });
   }
 
   preRender() {

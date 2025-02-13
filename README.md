@@ -2,6 +2,8 @@
 
 A configurable Adapt component that helps learners create strong passwords by providing real-time feedback on password strength and specific improvement suggestions.
 
+![alt text](image.png)
+
 ## Features
 
 - Real-time password strength evaluation
