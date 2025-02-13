@@ -79,11 +79,11 @@
                     "min": 1,
                     "max": 100
                   }
-                ],
+                ]
               },
               "suggestion": {
                 "type": "string",
-                "required", false,
+                "required": false,
                 "title": "Suggestion",
                 "inputType": "Text",
                 "validators": [],
@@ -91,7 +91,7 @@
               },
               "score": {
                 "type": "integer",
-                "required", true,
+                "required": true,
                 "title": "Score",
                 "inputType": "Text",
                 "validators": [
@@ -105,7 +105,7 @@
               }
             }
           },
-          "default": {
+          "default": [
             {
               "length": 8,
               "suggestion": "Use at least 8 chars.",
@@ -113,30 +113,30 @@
             },
             {
               "length": 12,
-              "suggestion": "Use at least 12 chars."
+              "suggestion": "Use at least 12 chars.",
               "score": 1
             },
             {
-              "regex": "/[A-Z]/",
-              "suggestion": "Add capital letters."
+              "regex": "[A-Z]",
+              "suggestion": "Add capital letters.",
               "score": 1
             },
             {
-              "regex": "/[a-z]/",
-              "suggestion": "Add small letters."
+              "regex": "[a-z]",
+              "suggestion": "Add small letters.",
               "score": 1
             },
             {
-              "regex": "/[0-9]/",
+              "regex": "[0-9]",
               "suggestion": "Add numbers.",
               "score": 1
             },
             {
-              "regex": "/[^A-Za-z0-9]/",
+              "regex": "[^A-Za-z0-9]",
               "suggestion": "Add special chars.",
               "score": 1
             }
-          }
+          ]
         }
       }
     }

@@ -1,4 +1,4 @@
-import ComponentView from 'core/js/models/componentView';
+import ComponentView from 'core/js/views/componentView';
 import ReactDOM from 'react-dom';
 
 class PwdstrView extends ComponentView {
