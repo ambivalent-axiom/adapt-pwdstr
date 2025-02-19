@@ -44,6 +44,39 @@
     "default": "full-width",
     "editorOnly": true
     },
+    "_feedback": {
+      "type": "object",
+      "required": false,
+      "properties": {
+        "_isEnabled": {
+          "type": "boolean",
+          "required": true,
+          "title": "Enable feedback",
+          "default": false,
+          "help": "Will popup Adapts default feedback modal when component completed"
+        },
+        "complete": {
+          "type": "object",
+          "required": false,
+          "properties": {
+            "title": {
+              "type": "string",
+              "required": false,
+              "default": "Congratulations!",
+              "inputType": "Text",
+              "validators": []
+            },
+            "body": {
+              "type": "string",
+              "required": false,
+              "default": "You have created the strong password!",
+              "inputType": "TextArea",
+              "validators": []
+            }
+          }
+        }
+      }
+    },
     "_pwdstr": {
       "type": "object",
       "required": false,

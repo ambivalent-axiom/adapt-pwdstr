@@ -15,21 +15,19 @@ class PwdstrModel extends ComponentModel {
   }
 
   onChallangeComplete(score) {
-    this.set({
-      _score: score, // points will be calculated in template dynamically
-      _isComplete: true,
-      _isInteractionComplete: true
-    });
-
-    this.setCompletionStatus();
-
     const feedback = this.get('_feedback');
-    if (feedback?._isEnabled) {
+    if (feedback?._isEnabled && this._isComplete === false) {
       notify.popup({
         title: feedback.complete.title,
         body: feedback.complete.body
       });
     }
+    this.set({
+      _score: score, // points will be calculated in template dynamically
+      _isComplete: true,
+      _isInteractionComplete: true
+    });
+    this.setCompletionStatus();
     this.trigger('complete'); // Trigger completion event
   }
 
