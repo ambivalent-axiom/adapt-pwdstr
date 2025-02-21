@@ -96,21 +96,20 @@
                 "required": false,
                 "title": "Regex pattern",
                 "inputType": "Text",
-                "validators": ["required"],
+                "validators": [],
                 "help": "Regex pattern that provided keyword should match in text."
               },
               "length": {
                 "type": "integer",
                 "required": false,
                 "title": "String length",
-                "inputType": "Text",
+                "inputType": "Number",
                 "validators": [
-                  "required",
                   {
                     "type": "number",
                     "allowDecimal": false,
                     "min": 1,
-                    "max": 100
+                    "max": 16
                   }
                 ]
               },
@@ -140,34 +139,40 @@
           },
           "default": [
             {
+              "regex": "",
               "length": 8,
-              "suggestion": "Use at least 8 chars.",
-              "score": 1
+              "suggestion": "Izmanto vismaz 8 simbolus",
+              "score": "1"
             },
             {
+              "regex": "",
               "length": 12,
-              "suggestion": "Use at least 12 chars.",
-              "score": 1
+              "suggestion": "Ja bīs 12 simboli, būs drošāk",
+              "score": "1"
             },
-            {
+            {   
               "regex": "[A-Z]",
-              "suggestion": "Add capital letters.",
-              "score": 1
+              "length": 0,
+              "suggestion": "Pievieno lielos burtus, būs drošāk",
+              "score": "1"
             },
             {
               "regex": "[a-z]",
-              "suggestion": "Add small letters.",
-              "score": 1
+              "length": 0,
+              "suggestion": "Bez maziem burtiem nav tik droši",
+              "score": "1"
             },
             {
               "regex": "[0-9]",
-              "suggestion": "Add numbers.",
-              "score": 1
+              "length": 0,
+              "suggestion": "Ja pielikt klāt ciparus, tad būs vēl drošāk",
+              "score": "1"
             },
             {
               "regex": "[^A-Za-z0-9]",
-              "suggestion": "Add special chars.",
-              "score": 1
+              "length": 0,
+              "suggestion": "Pievieno īpašos simbolus (!@#$%^&*) maksimālai drošībai",
+              "score": "1"
             }
           ]
         }

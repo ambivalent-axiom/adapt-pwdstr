@@ -54,7 +54,7 @@ export default function PwdStr(props) {
     return aspects.reduce((totalScore, aspect) => {
       // Check length criteria
       if (aspect.length && password.length >= aspect.length) {
-        return totalScore + aspect.score;
+        return totalScore + parseInt(aspect.score, 10);
       }
 
       // Check regex criteria
@@ -62,7 +62,7 @@ export default function PwdStr(props) {
         try {
           const pattern = new RegExp(aspect.regex);
           if (pattern.test(password)) {
-            return totalScore + aspect.score;
+            return totalScore + parseInt(aspect.score, 10);
           }
         } catch (error) {
           console.warn('Invalid regex pattern:', aspect.regex);

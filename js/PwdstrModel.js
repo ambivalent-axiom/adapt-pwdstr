@@ -10,7 +10,7 @@ class PwdstrModel extends ComponentModel {
   setupAspects() {
     const aspects = this.get('_pwdstr').aspects;
     this._maxScore = aspects.reduce( // need this to compare to in template
-      (sum, aspect) => sum + aspect.score, 0
+      (sum, aspect) => sum + parseInt(aspect.score, 10), 0
     );
   }
 
